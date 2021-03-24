@@ -9,7 +9,7 @@ def short_pitching(q):
     y_q = 3 * q  # paso polar en ranuras
     for i in range(3):
         acort=(int(y_q)-i)/y_q
-        print(f'{int(y_q)-i}/{round(y_q,1)} -> kp1={kp(acort)[0]}, kp5={kp(acort)[1]}, kp7={kp(acort)[2]}')
+        return(f'{int(y_q)-i}/{round(y_q,1)} -> kp1={kp(acort)[0]}, kp5={kp(acort)[1]}, kp7={kp(acort)[2]}')
 
 def kp(acort):
     kp1=np.sin(acort*np.pi/2)
@@ -78,15 +78,23 @@ def slot_star(ang_m, series):
 
     doc.saveas("slot_star.dxf")
 
-slot_star(ang_m, series)
-print(f'q={q}')
-print("")
-print(f'Grupo recurrente (unidad) en beta={beta} polos formado por:')
-print(f'-> {beta-b} grupos con {a} bobinas')
-print(f'-> {b} grupos con {a+1} bobinas')
-print("")
-print(f'nro polos/{beta} caminos paralelos posibles')
-short_pitching(q)
+#slot_star(ang_m, series)
 
+def rep_gen():
+    f=open("reporte.txt","w+")
+    f.write(f'q={q}\n\n')
+    f.write(f'Grupo recurrente (unidad) en beta={beta} polos formado por:\n')
+    f.write(f'-> {beta-b} grupos con {a} bobinas\n')
+    f.write(f'-> {b} grupos con {a+1} bobinas\n')
+    f.write(f'nro polos/{beta} caminos paralelos posibles\n\n')
+    for i in series:
+        f.write(f'{int(i)}|')
+        if i == series[int(len(series)/3)-1] or i == series[int(len(series)*2/3)-1]:
+            f.write('\n')
+    f.write('\n\n')
+    f.write(short_pitching(q))
+    f.close()
+
+rep_gen()
 # Bibliografía:
 # Liwschitz AC-Electric Machinery, Appendix I: Fractional-Slot windings

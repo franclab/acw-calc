@@ -1,0 +1,12 @@
+q=3.5
+
+Grupo recurrente (unidad) en beta=2 polos formado por:
+-> 1 grupos con 3 bobinas
+-> 1 grupos con 4 bobinas
+nro polos/2 caminos paralelos posibles
+
+1|12|2|13|3|14|4|
+15|5|16|6|17|7|18|
+8|19|9|20|10|21|11|
+
+10/10.5 -> kp1=0.997, kp5=0.931, kp7=-0.866

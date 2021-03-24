@@ -23,5 +23,5 @@ Ej: Si el paso de bobina seleccionado es 5, la estrella de la segunda capa empez
 En algunos casos el bobinado de ranura fraccionada no es realizable ya que no cumple con las condiciones de simetría.
 Esto se da para **beta / 3 = entero**.
 
-####Bibliografía
+#### Bibliografía
 (A-C Machines) Michael Liwschitz-Garik - Electric Machinery. 2-D. Van Nostrand Company (1946)
