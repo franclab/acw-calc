@@ -1,7 +1,7 @@
 import numpy as np
 from fractions import Fraction as frac
 import ezdxf
-q=3.5
+q=2.5
 
 # acortamiento, posibles ratios
 def short_pitching(q):
@@ -81,16 +81,19 @@ def slot_star(ang_m, series):
 #slot_star(ang_m, series)
 
 def rep_gen():
+    '''Genera un archivo .txt con los datos de salida'''
     f=open("reporte.txt","w+")
     f.write(f'q={q}\n\n')
-    f.write(f'Grupo recurrente (unidad) en beta={beta} polos formado por:\n')
+    f.write(f'Grupo recurrente (unidad) en {beta} polos formado por:\n')
     f.write(f'-> {beta-b} grupos con {a} bobinas\n')
     f.write(f'-> {b} grupos con {a+1} bobinas\n')
     f.write(f'nro polos/{beta} caminos paralelos posibles\n\n')
+    f.write("Ubicación de las fases en la primera capa:\n\n")
     for i in series:
         f.write(f'{int(i)}|')
         if i == series[int(len(series)/3)-1] or i == series[int(len(series)*2/3)-1]:
             f.write('\n')
+    f.write('\n\n(La segunda capa está desfasada el n° de ranuras del acortamiento seleccionado)')
     f.write('\n\n')
     f.write(short_pitching(q))
     f.close()
