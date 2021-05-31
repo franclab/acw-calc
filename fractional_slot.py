@@ -1,7 +1,10 @@
 import numpy as np
 from fractions import Fraction as frac
 import ezdxf
-q=2.5
+from datetime import datetime
+
+q=2.75
+current_time = datetime.now().strftime("%d/%m/%y %H:%M:%S")
 
 # acortamiento, posibles ratios
 def short_pitching(q):
@@ -82,7 +85,8 @@ def slot_star(ang_m, series):
 
 def rep_gen():
     '''Genera un archivo .txt con los datos de salida'''
-    f=open("reporte.txt","w+")
+    f=open("reporte.txt","w+",encoding="utf-8")
+    f.write(f'{current_time}\n')
     f.write(f'q={q}\n\n')
     f.write(f'Grupo recurrente (unidad) en {beta} polos formado por:\n')
     f.write(f'-> {beta-b} grupos con {a} bobinas\n')
@@ -99,5 +103,6 @@ def rep_gen():
     f.close()
 
 rep_gen()
+
 # Bibliografía:
 # Liwschitz AC-Electric Machinery, Appendix I: Fractional-Slot windings
