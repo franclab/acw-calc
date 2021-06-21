@@ -22,5 +22,9 @@ Genera un archivo de texto llamado reporte.txt y un archivo con el gráfico de l
 En algunos casos el bobinado de ranura fraccionada no es realizable ya que no cumple con las condiciones de simetría.
 Esto se da para $ \frac{\beta}{m}\in \Z $ , es decir $\beta$ dividido el número de fases es igual a un entero.
 
+## To Do
+- ingresar datos como archivo de texto
+- usar acortamiento prederteminado (~5/6) o forzarlo (con default arg)
+
 ## Bibliografía
 (A-C Machines) Michael Liwschitz-Garik - Electric Machinery. 2-D. Van Nostrand Company (1946)
